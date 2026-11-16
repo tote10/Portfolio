@@ -4,7 +4,7 @@
 
 The original site used Next.js 14 App Router, React 18, TypeScript, Tailwind, Framer Motion, and Formspree. It had one placeholder project, missing résumé and project links, a custom cursor, animation-heavy client components, a forced dark theme, and placeholder-only contact fields. No tests were configured. The existing ESLint configuration used APIs incompatible with the installed ESLint/Next versions.
 
-The implementation keeps Next.js, TypeScript, Tailwind, and the existing Formspree integration. It replaces decorative effects with an editorial layout: warm paper, ink, one rust accent, system sans-serif and serif typography, fine rules, and generous spacing. Projects precede biography and skills. Workflow illustrations explain actual functionality and are explicitly labeled; they are not product screenshots or live monitoring data.
+The implementation keeps Next.js, TypeScript, Tailwind, and the existing Formspree integration. It replaces decorative effects with an editorial layout: soft sand, mocha text, muted green, and a restrained pink accent, system sans-serif and serif typography, fine rules, and generous spacing. Projects precede biography and skills. Workflow illustrations explain actual functionality and are explicitly labeled; they are not product screenshots or live monitoring data.
 
 1. Verify public repositories and personal information.
 2. Rebuild navigation, hero, selected work, biography, categorized skills, services, and contact.
@@ -25,7 +25,7 @@ Reviewed the public `tote10` repositories on November 17, 2026: Portfolio, tote1
 | sador                       | [README](https://github.com/tote10/sador/blob/main/README.md)                                                                                                                                                                                                                                                                                                                                                                            | Omitted: generic Laravel README provides insufficient context for a meaningful project description.                                                                                |
 | CompileML                   | [README](https://github.com/tote10/CompileML/blob/main/README.md)                                                                                                                                                                                                                                                                                                                                                                        | Omitted: upstream links point to orgoca/CompileML; individual contribution not established.                                                                                        |
 
-Name, email, location, and portfolio domain come from the existing site and [public profile README](https://github.com/tote10/tote10/blob/main/README.md). Education and stated technical interests come directly from the owner's redesign brief. Skills communicate focus areas, not certifications or proficiency scores. Services describe the work offered, not past paid engagements.
+Name, email, location, and portfolio domain come from the existing site and [public profile README](https://github.com/tote10/tote10/blob/main/README.md). The current professional title, Software Engineer, follows the owner’s latest correction; student and education copy has been removed. Stated technical interests come directly from the owner’s brief. Skills communicate focus areas, not certifications or proficiency scores. Services describe the work offered, not past paid engagements.
 
 ## Maintenance
 
@@ -58,3 +58,7 @@ No gradients, neon, glass panels, custom cursor, decorative counters, skills bad
 The existing Next.js 14.1.0 version is retained to keep this redesign on the existing framework version. The installer flags it as vulnerable; a framework security upgrade remains necessary before production rollout. See the [Next.js security notice](https://nextjs.org/blog/security-update-2025-12-11) and [current support policy](https://nextjs.org/support-policy). This redesign does not claim to remediate inherited dependency vulnerabilities.
 
 The existing Formspree endpoint is retained, but its account configuration and end-to-end email delivery have not been verified. Browser tests intercept requests and send no real messages. The verified email link provides a direct alternative.
+
+## Latest owner revision
+
+Present Moti as a Software Engineer across the hero, biography, SEO metadata, and sharing image. Remove student and education positioning. Use soft sand (`#f2e9dc`), mocha (`#493a31`), and muted green (`#435a45`), with pink (`#ab4f70`) limited to the wordmark dot. Retain corresponding dark theme colors. Remove the grayscale portrait filter so a replacement photo can retain its natural colors. The new portrait is pending an image from the owner; the existing photo remains in place.

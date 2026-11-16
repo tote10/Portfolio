@@ -27,9 +27,8 @@ export function About() {
             <em>Careful with the details.</em>
           </h2>
           <p>
-            I’m a final-year Computer Science student at Adama Science and
-            Technology University. I’m drawn to the work behind an application:
-            how data is organized, how an API behaves, and how the pieces fit
+            I’m a software engineer drawn to the work behind an application: how
+            data is organized, how an API behaves, and how the pieces fit
             together.
           </p>
           <p>
@@ -42,11 +41,6 @@ export function About() {
             working through the parts I don’t yet understand. I aim for clear
             structure and software that is straightforward to use and maintain.
           </p>
-          <div className="education">
-            <span className="eyebrow">Education</span>
-            <strong>Computer Science · Final year</strong>
-            <span>Adama Science and Technology University</span>
-          </div>
         </div>
       </div>
     </section>

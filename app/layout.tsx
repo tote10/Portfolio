@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 const description =
-  "Moti Alemu — final-year Computer Science student at Adama Science and Technology University. Python, backend APIs, automation, and full-stack software projects.";
+  "Moti Alemu — Software Engineer. Python, backend APIs, automation, and full-stack software projects.";
 export const metadata: Metadata = {
   metadataBase: new URL("https://moti-alemu.vercel.app"),
-  title: "Moti Alemu — Software Developer",
+  title: "Moti Alemu — Software Engineer",
   description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Moti Alemu — Software Developer",
+    title: "Moti Alemu — Software Engineer",
     description,
     url: "/",
     siteName: "Moti Alemu",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Moti Alemu — Software Developer",
+    title: "Moti Alemu — Software Engineer",
     description,
     images: ["/opengraph-image"],
   },
