@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <section id="home" className="hero wrap" aria-labelledby="intro-title">
       <div className="hero-top">
-        <p className="eyebrow">Moti Alemu / Software developer</p>
+        <p className="eyebrow">Moti Alemu / Software Engineer</p>
         <p className="availability">
           <span aria-hidden="true" />
           Available for meaningful projects
@@ -17,8 +17,8 @@ export function Hero() {
       </h1>
       <div className="hero-bottom">
         <p>
-          I’m Moti, a final-year Computer Science student focused on Python,
-          backend engineering, and the details that make software work.
+          I’m Moti, a software engineer focused on Python, backend engineering,
+          and the details that make software work.
         </p>
         <div className="hero-links">
           <a className="button" href="#projects">

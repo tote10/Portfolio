@@ -2,7 +2,7 @@
 
 Replace the placeholder construction project and animation-heavy presentation with an editorial portfolio centered on real software: API Health Monitor, Stock & Property Management, Driving School Management, and an explicitly ongoing Repo-Sage entry.
 
-The design uses warm paper and ink, a rust accent, system typography, clear project workflows, and responsive layouts. It adds education, categorized technical focus, practical services, and an accessible contact form while preserving the existing Formspree integration. System/light/dark themes persist, and metadata includes a generated sharing image, sitemap, robots route, and custom icon. Six unused UI/animation dependencies and their components are removed.
+The design uses soft sand, mocha, muted green, and a small pink accent, system typography, clear project workflows, and responsive layouts. It presents Moti as a Software Engineer and adds categorized technical focus, practical services, and an accessible contact form while preserving the existing Formspree integration. System/light/dark themes persist, and metadata includes a generated sharing image, sitemap, robots route, and custom icon. Six unused UI/animation dependencies and their components are removed.
 
 ## Review
 
