@@ -1,85 +1,102 @@
-"use client";
+import { projects } from "@/lib/projects";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
-
-const projects = [
-    {
-        title: "Construction Website Backend",
-        description: "Designed and implemented robust backend logic, structured the database system, and managed API data flow for a construction management platform.",
-        tags: ["Python", "SQL", "API Development", "Database Design"],
-        image: "/placeholder-project-1.jpg",
-        liveUrl: "#",
-        githubUrl: "https://github.com/tote10/construction-backend",
-    },
-];
-
-export const Projects = () => {
-    return (
-        <section id="projects" className="py-24 bg-black relative">
-            <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-16 text-center"
-                >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Selected Work</h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
-                        Check out some of my recent projects. Each one is a unique solution tailored to specific needs.
-                    </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300"
-                        >
-                            <div className="aspect-video bg-gray-800 relative overflow-hidden">
-                                <img
-                                    src="https://placehold.co/600x400/1a1a1a/ffffff?text=Construction+Backend"
-                                    alt={project.title}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-
-                            <div className="p-6 relative z-20">
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.tags.map(tag => (
-                                        <span key={tag} className="text-xs px-2 py-1 rounded-full bg-white/10 text-gray-300">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                                <p className="text-gray-400 text-sm mb-6 line-clamp-2">
-                                    {project.description}
-                                </p>
-
-                                <div className="flex items-center gap-4">
-                                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="w-full">
-                                        <Button size="sm" variant="outline" className="w-full gap-2">
-                                            <Github className="w-4 h-4" /> Code
-                                        </Button>
-                                    </a>
-                                    <Button size="sm" variant="premium" className="w-full gap-2">
-                                        Live Demo <ExternalLink className="w-4 h-4" />
-                                    </Button>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+function ProjectDiagram({ type }: { type: string }) {
+  const steps =
+    type === "monitor"
+      ? ["Register endpoint", "Schedule checks", "Record results"]
+      : type === "stock"
+        ? ["Receive goods", "Track inventory", "Issue & transfer"]
+        : ["Enroll student", "Schedule training", "Record exams"];
+  return (
+    <div className={`project-diagram ${type}`}>
+      <span className="diagram-label">System at a glance</span>
+      <div className="diagram-flow">
+        {steps.map((step, i) => (
+          <div key={step}>
+            <span className="diagram-step">0{i + 1}</span>
+            <span>{step}</span>
+            {i < 2 && (
+              <span className="flow-arrow" aria-hidden="true">
+                ↓
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+      <span className="diagram-caption">Workflow illustration</span>
+    </div>
+  );
+}
+export function Projects() {
+  return (
+    <section
+      id="projects"
+      className="section wrap"
+      aria-labelledby="work-title"
+    >
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">01 / Selected work</p>
+          <h2 id="work-title">Built to do something useful.</h2>
+        </div>
+        <p>
+          A closer look at the systems I’m building.
+          <br />
+          Real code, open to explore.
+        </p>
+      </div>
+      <div className="project-list">
+        {projects.map((project) => (
+          <article className="project" key={project.repo}>
+            <ProjectDiagram type={project.type} />
+            <div className="project-copy">
+              <p className="eyebrow">
+                {project.number} / {project.category}
+              </p>
+              <h3>
+                <a href={`https://github.com/tote10/${project.repo}`}>
+                  {project.title}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </h3>
+              <p>{project.description}</p>
+              <p className="project-detail">{project.detail}</p>
+              <ul className="technologies" aria-label="Technologies">
+                {project.technologies.map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
+              <a
+                className="text-link"
+                href={`https://github.com/tote10/${project.repo}`}
+              >
+                Explore repository <span aria-hidden="true">↗</span>
+                <span className="sr-only">: {project.title}</span>
+              </a>
             </div>
-        </section>
-    );
-};
+          </article>
+        ))}
+      </div>
+      <aside className="ongoing">
+        <p className="eyebrow">On the workbench / In progress</p>
+        <div>
+          <h3>Repo-Sage</h3>
+          <p>
+            Exploring codebase question answering with Python and FastAPI: index
+            a repository, retrieve relevant code, and return answers with file
+            and line citations.
+          </p>
+        </div>
+        <a className="text-link" href="https://github.com/tote10/Repo-Sage">
+          Follow the project <span aria-hidden="true">↗</span>
+        </a>
+      </aside>
+      <a
+        className="text-link all-projects"
+        href="https://github.com/tote10?tab=repositories"
+      >
+        All repositories on GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+  );
+}
