@@ -22,14 +22,14 @@ No test script is configured. See [redesign notes](docs/REDESIGN.md) for reposit
 
 ## Preview
 
-[Desktop · light](docs/previews/desktop-light.png) · [Desktop · dark](docs/previews/desktop-dark.png) · [Mobile](docs/previews/mobile-light.png)
+[Desktop](docs/previews/desktop-light.png) · [Mobile](docs/previews/mobile-light.png)
 
 ## Editing
 
 - `lib/projects.ts`: selected projects and verified repository links.
-- `components/`: reusable page sections. Navigation and contact are the only client components.
-- `app/globals.css`: responsive layout, typography, and theme variables.
-- `app/layout.tsx`: metadata, canonical domain, and initial theme preference.
+- `components/`: reusable page sections. Contact is the only client component.
+- `app/globals.css`: responsive layout, typography, and palette variables.
+- `app/layout.tsx`: metadata and canonical domain.
 - `app/opengraph-image.tsx`: generated social sharing image.
 
 The contact form retains the existing Formspree form ID. Browser validation uses intercepted responses; actual third-party delivery has not been tested with a live submission.

@@ -3,50 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --sand: #f1e7d8;
-  --mocha: #49392f;
-  --green: #344e41;
-  --green-soft: #dce2d3;
-  --pink: #edbdd0;
-  --pink-ink: #593449;
-  --paper: #f1e7d8;
-  --ink: #49392f;
-  --muted: #695c4e;
-  --line: #c9bdab;
-  --surface: #e8ddcc;
-  --accent: #344e41;
-  --feature: #344e41;
-  --feature-text: #f5edde;
-  --feature-muted: #d2dccb;
+  --paper: #f0e5db;
+  --ink: #474329;
+  --pink: #fc75b4;
+  --pink-ink: var(--ink);
+  --muted: var(--ink);
+  --line: var(--ink);
+  --surface: var(--paper);
+  --accent: var(--ink);
+  --feature: var(--paper);
+  --feature-text: var(--ink);
+  --feature-muted: var(--ink);
   color-scheme: light;
-}
-:root[data-theme="dark"] {
-  --paper: #262923;
-  --ink: #f1e7d8;
-  --muted: #c2b9a9;
-  --line: #55594a;
-  --surface: #32392f;
-  --accent: #c8d8ba;
-  --green-soft: #343e32;
-  --feature: #394d3d;
-  --feature-text: #f5edde;
-  --feature-muted: #d5decf;
-  color-scheme: dark;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --paper: #262923;
-    --ink: #f1e7d8;
-    --muted: #c2b9a9;
-    --line: #55594a;
-    --surface: #32392f;
-    --accent: #c8d8ba;
-    --green-soft: #343e32;
-    --feature: #394d3d;
-    --feature-text: #f5edde;
-    --feature-muted: #d5decf;
-    color-scheme: dark;
-  }
 }
 * {
   box-sizing: border-box;
@@ -63,8 +31,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 ::selection {
-  background: var(--pink);
-  color: var(--pink-ink);
+  background: var(--ink);
+  color: var(--paper);
 }
 a {
   color: inherit;
@@ -149,17 +117,18 @@ img {
   border-bottom: 1px solid currentColor;
 }
 .text-link:hover {
-  opacity: 0.75;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 38px;
-  background: var(--accent);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
   border: 1px solid var(--accent);
-  border-radius: 3px;
+  border-radius: 0;
   font-size: 13px;
   padding: 18px 24px;
   cursor: pointer;
@@ -168,12 +137,14 @@ img {
     color 0.2s;
 }
 .button:hover {
-  background: var(--ink);
+  background: var(--paper);
   border-color: var(--ink);
-  color: var(--paper);
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .button:disabled {
-  opacity: 0.6;
+  border-style: dashed;
   cursor: wait;
 }
 .site-header {
@@ -205,10 +176,6 @@ nav a {
 }
 .nav-contact {
   border-bottom: 1px solid var(--ink);
-}
-.theme-control {
-  border-left: 1px solid var(--line);
-  padding-left: 22px;
 }
 select {
   background: transparent;
@@ -257,20 +224,20 @@ select {
   margin-top: 30px;
 }
 .hero-portrait {
-  padding-top: 13px;
+  width: 100%;
+  max-width: 320px;
+  justify-self: end;
+  align-self: center;
+  padding-top: 0;
 }
 .portrait-frame {
-  padding: 14px 14px 0;
-  background: var(--mocha);
-  border-radius: 48% 48% 0 0;
-  overflow: hidden;
+  padding: 0;
+  background: var(--paper);
 }
 .portrait-frame img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4/4.65;
-  object-fit: cover;
-  border-radius: 48% 48% 0 0;
+  object-fit: contain;
 }
 .hero-portrait figcaption {
   display: flex;
@@ -286,10 +253,11 @@ select {
   display: inline-flex;
   align-items: center;
   gap: 25px;
-  background: var(--pink);
-  color: var(--pink-ink);
+  background: var(--paper);
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
   padding: 10px 14px;
-  transform: rotate(-3deg);
+
   font-size: 11px;
 }
 .availability:hover {
@@ -335,7 +303,7 @@ select {
   grid-template-columns: 1.2fr 1fr;
   background: var(--feature);
   color: var(--feature-text);
-  border-radius: 4px;
+  border-block: 1px solid var(--ink);
   overflow: hidden;
 }
 .featured-intro {
@@ -377,7 +345,8 @@ select {
 }
 .featured-project a:hover {
   color: var(--feature-text);
-  opacity: 0.8;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 .featured-project :focus-visible {
   outline-color: var(--feature-text);
@@ -393,15 +362,15 @@ select {
   color: var(--muted);
 }
 .monitor-study {
-  border-left: 1px solid #75816a;
+  border-left: 1px solid var(--ink);
   padding: 35px 35px 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #2b4337;
+  background: var(--paper);
 }
 .monitor-study .eyebrow {
-  color: #d5dfce;
+  color: var(--ink);
   font-size: 10px;
 }
 .architecture {
@@ -415,22 +384,22 @@ select {
     50px Georgia,
     serif;
   letter-spacing: -2px;
-  color: #f5edde;
+  color: var(--ink);
 }
 .architecture p {
   font-size: 11px;
-  color: #d5dfce;
+  color: var(--ink);
   margin-top: 7px;
 }
 .architecture-arrow {
   display: block;
-  color: #d5dfce;
+  color: var(--ink);
   font-size: 20px;
   margin-bottom: 10px;
 }
 .study-note {
   font-size: 10px;
-  color: #d5dfce;
+  color: var(--ink);
 }
 .project-pair {
   display: grid;
@@ -556,17 +525,17 @@ select {
   margin-top: 6px;
 }
 .services-section {
-  background: #49392f;
-  color: #f1e7d8;
+  background: var(--paper);
+  color: var(--ink);
 }
 .services-section .eyebrow {
-  color: #d7c8b6;
+  color: var(--ink);
 }
 .services-section .section-heading > p {
-  color: #d7c8b6;
+  color: var(--ink);
 }
 .services-section h2 em {
-  color: #d6dec8;
+  color: var(--ink);
 }
 .service-list {
   display: grid;
@@ -578,7 +547,7 @@ select {
   display: grid;
   grid-template-columns: 25px 1fr 20px;
   gap: 16px;
-  border-top: 1px solid #938171;
+  border-top: 1px solid var(--ink);
   padding: 28px 0 35px;
 }
 .service-list h3 {
@@ -586,22 +555,22 @@ select {
   margin-bottom: 15px;
 }
 .service-list p {
-  color: #e0d2c1;
+  color: var(--ink);
   font-size: 13px;
   max-width: 390px;
 }
 .service-list .index-number {
   padding-top: 6px;
-  color: #d7c8b6;
+  color: var(--ink);
 }
 .service-arrow {
   font-size: 20px;
 }
 .services-section a:hover {
-  color: #f1e7d8;
+  color: var(--ink);
 }
 .services-section :focus-visible {
-  outline-color: #f1e7d8;
+  outline-color: var(--ink);
 }
 .contact-heading {
   border-bottom: 1px solid var(--line);
@@ -748,7 +717,7 @@ form .button {
     flex-wrap: wrap;
   }
   .portrait-frame {
-    padding: 10px 10px 0;
+    padding: 0;
   }
   .hero-portrait figcaption {
     flex-wrap: wrap;
@@ -773,9 +742,6 @@ form .button {
   }
   .site-header {
     gap: 25px;
-  }
-  .theme-control {
-    padding-left: 15px;
   }
 }
 @media (max-width: 700px) {
@@ -802,10 +768,6 @@ form .button {
   }
   nav a {
     padding: 9px 0;
-  }
-  .theme-control {
-    margin-left: auto;
-    border: 0;
   }
   .hero {
     grid-template-columns: 1fr;
@@ -835,12 +797,12 @@ form .button {
   }
   .hero-portrait {
     width: 100%;
-    max-width: 440px;
+    max-width: 320px;
     margin: 42px auto 0;
     padding-top: 0;
   }
   .portrait-frame img {
-    aspect-ratio: 1/1.05;
+    height: auto;
   }
   .hero-portrait figcaption {
     flex-wrap: nowrap;
@@ -877,7 +839,7 @@ form .button {
   }
   .monitor-study {
     border-left: 0;
-    border-top: 1px solid #75816a;
+    border-top: 1px solid var(--ink);
     padding: 28px 25px;
   }
   .architecture {
@@ -1000,4 +962,82 @@ form .button {
     transition: none !important;
     transform: none !important;
   }
+}
+
+/* One fixed palette; only the availability label uses pink. */
+.services-section {
+  border-block: 1px solid var(--ink);
+}
+.hero {
+  grid-template-columns: 1.4fr 0.8fr;
+  column-gap: 80px;
+}
+.hero h1 {
+  font-size: clamp(84px, 8.3vw, 118px);
+}
+.hero h1 span {
+  padding-left: 0;
+  font-style: normal;
+}
+.hero-intro {
+  max-width: 450px;
+}
+.hero-portrait figcaption {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.hero-portrait figcaption > span {
+  font-size: 11px;
+}
+.featured-intro {
+  padding-left: 0;
+}
+.project-copy h3 {
+  letter-spacing: -0.025em;
+}
+.services-section h2 {
+  font-size: clamp(42px, 4.6vw, 60px);
+}
+.service-list article {
+  border-top-style: solid;
+}
+@media (max-width: 1000px) {
+  .hero {
+    column-gap: 40px;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: clamp(80px, 23vw, 118px);
+  }
+  .hero-portrait {
+    justify-self: start;
+    margin-left: 0;
+    max-width: 260px;
+  }
+  .hero-portrait figcaption {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+  .featured-intro {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .monitor-study {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.availability::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  background: var(--pink);
 }

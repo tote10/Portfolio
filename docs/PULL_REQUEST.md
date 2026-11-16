@@ -2,25 +2,24 @@
 
 Replace the placeholder construction project and animation-heavy presentation with an editorial portfolio centered on real software: API Health Monitor, Stock & Property Management, Driving School Management, and an explicitly ongoing Repo-Sage entry.
 
-The site has an entirely new visual structure: a large serif name beside an arched portrait, a forest-green lead project, a two-column supporting project layout, a skills index, a full-width mocha services section, and a redesigned contact form. Soft sand, mocha, and green carry the page, with one pink availability tag. Navigation, wordmark, typography, spacing, favicon, and sharing image are rebuilt.
+The site uses exactly soft sand `#F0E5DB` for backgrounds and mocha green `#474329` for lettering, controls, and rules. Watermelon pink `#FC75B4` appears once as a small availability marker. Extra section colors and theme variants are removed. A smaller rectangular portrait replaces the arched frame; the replacement photo remains pending an image from the owner.
 
-Moti is presented as a Software Engineer. Verified project descriptions, the existing Formspree integration, persistent system/light/dark themes, keyboard navigation, and reduced-motion behavior are preserved. Six unused UI/animation dependencies and their components are removed. The replacement portrait remains pending an image from the owner.
+The page combines a serif name, clear project hierarchy, a skills index, services, and an accessible contact form. Verified descriptions, keyboard navigation, reduced-motion support, and the existing Formspree integration are preserved. The favicon and sharing image use the same exact palette. Six unused UI/animation dependencies and their components are removed.
 
 ## Review
 
 - [Content evidence and design decisions](REDESIGN.md)
-- [Desktop light preview](previews/desktop-light.png)
-- [Desktop dark preview](previews/desktop-dark.png)
+- [Desktop preview](previews/desktop-light.png)
 - [Mobile preview](previews/mobile-light.png)
 
 ## Validation
 
 - Lint, TypeScript, production build, and diff whitespace checks pass.
 - Production browser checks pass at 320, 375, 768, 1024, and 1440 px.
-- Theme persistence, OS preference changes, reduced motion, keyboard skip link, internal anchors, image loading, and metadata routes pass.
+- Exact palette under both OS preferences, rectangular image treatment, reduced motion, keyboard skip link, internal anchors, image loading, and metadata routes pass.
 - Form success and error behavior tested with intercepted Formspree responses; no messages were sent.
-- Axe WCAG 2 A/AA and 2.1 AA: zero violations at mobile and desktop widths in both themes.
-- Home page prerendered; Next.js reports 98.3 KB first-load JavaScript.
+- Axe WCAG 2 A/AA and 2.1 AA: zero violations at mobile and desktop widths under both OS preferences.
+- Home page prerendered; Next.js reports 98.2 KB first-load JavaScript.
 
 ## Before deployment
 

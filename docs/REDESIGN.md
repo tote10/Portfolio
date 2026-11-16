@@ -8,14 +8,14 @@ The implementation keeps Next.js, TypeScript, Tailwind, and the existing Formspr
 
 ## Design system and layout
 
-- Soft sand (`#f1e7d8`) sets the page background; forest green (`#344e41`) carries the name, primary actions, and lead project. Mocha (`#49392f`) grounds the text, portrait frame, and full-width services section.
-- One pink treatment (`#edbdd0`) marks the availability link beneath the portrait. It replaces the previous tiny wordmark accent.
-- Large Georgia serif name and headings pair with a restrained system sans-serif body. The new wordmark uses the full name.
-- The hero pairs a two-line name with an arched portrait and practical introduction. The previous hero slogan is removed.
-- API Health Monitor receives a green feature with a labeled architecture overview. The other selected projects appear side by side without repeated workflow panels. Repo-Sage remains explicitly in progress.
-- Biography, a definition-list skills index, a mocha services grid, and a contact layout with underlined fields provide distinct section structures.
-- System/light/dark preferences, visible focus, semantic HTML, reduced-motion support, optimized imagery, and the existing contact functionality remain available.
-- The sharing image and favicon follow the new design.
+- Exactly three interface colors: soft sand `#F0E5DB` for backgrounds; mocha green `#474329` for text, controls, focus outlines, and rules; watermelon pink `#FC75B4` for one small decorative marker beside the availability link. No additional shades, faded colors, gradients, or colored section backgrounds.
+- A single fixed palette replaces the theme selector and theme initialization. It preserves the exact colors regardless of the OS preference or a previously stored theme.
+- The portrait is a smaller, plain rectangular image. The arched crop, thick frame, oversized treatment, and tilted availability tag are removed. The original photo stays until the owner supplies its replacement; no substitute likeness is invented.
+- The hero introduces Moti as a Software Engineer. Serif name and headings pair with a system sans-serif body. Primary controls use sand backgrounds and green outlines.
+- Project hierarchy comes from layout, typography, spacing, and rules. API Health Monitor has a labeled architecture overview; supporting projects sit side by side on desktop. No fake live dashboard or repeated decorative cards.
+- Biography, a definition-list skills index, services, and contact keep their distinct layouts. Section backgrounds all use the same sand.
+- Visible focus, semantic HTML, reduced-motion support, optimized imagery, and the existing contact functionality remain available.
+- The sharing image and favicon use the same exact sand and mocha-green values.
 
 ## Content evidence
 
@@ -35,8 +35,8 @@ Name, email, location, and portfolio domain come from the existing site and [pub
 ## Maintenance
 
 - Project content: `lib/projects.ts`; static rendering, no GitHub token or runtime API requests.
-- Themes: CSS variables in `app/globals.css`; `system`, `light`, or `dark` in localStorage. System mode follows OS changes through CSS. Storage failures preserve a usable toggle.
-- Most components render on the server. Only navigation/theme and contact need client JavaScript.
+- Palette: the three literal color values live in `app/globals.css`; all other interface color variables reference sand or mocha green. No theme state or localStorage is used.
+- All page sections and navigation render on the server; only contact needs client JavaScript.
 - The original 31 KB portrait uses Next Image optimization. Fonts use local system stacks without network font requests.
 - Contact retains the original Formspree ID `xreapvkv`. Email is always available. Do not send unsolicited test submissions; successful third-party delivery requires a controlled owner-approved live submission.
 - Canonical URL is the public profile's `https://moti-alemu.vercel.app`; update layout, robots, and sitemap if the domain changes.
@@ -50,12 +50,12 @@ No gradients, neon, glass panels, custom cursor, decorative counters, skills bad
 
 - `npm run lint`: passed.
 - `npm run typecheck`: passed.
-- `npm run build`: passed; home page prerendered, 98.3 KB first-load JavaScript as reported by Next.js.
+- `npm run build`: passed; home page prerendered, 98.2 KB first-load JavaScript as reported by Next.js.
 - `git diff --check`: passed.
-- Production-preview browser checks with temporary Playwright tooling: no horizontal overflow at 320, 375, 768, 1024, or 1440 px; portrait loads; internal anchors resolve; keyboard skip link works; stored theme survives reload; system theme follows OS changes; reduced-motion disables smooth scrolling; required-field validation works; intercepted Formspree error and success responses render correctly; no browser exceptions.
+- Production-preview browser checks with temporary Playwright tooling: no horizontal overflow at 320, 375, 768, 1024, or 1440 px; portrait loads; internal anchors resolve; keyboard skip link works; exact sand background and mocha-green text remain the same under light and dark OS preferences; reduced-motion disables smooth scrolling; required-field validation works; intercepted Formspree error and success responses render correctly; no browser exceptions.
 - `/robots.txt`, `/sitemap.xml`, `/opengraph-image`, and `/icon.svg`: HTTP 200 in the production preview.
-- Axe WCAG 2 A/AA and 2.1 AA scan: zero violations at 375 and 1440 px in both light and dark modes. Automated checks do not replace assistive-technology testing.
-- Reviewed full-page desktop light/dark and mobile screenshots, included in `docs/previews/`.
+- Axe WCAG 2 A/AA and 2.1 AA scan: zero violations at 375 and 1440 px with both light and dark OS preferences. Automated checks do not replace assistive-technology testing.
+- Reviewed full-page desktop and mobile screenshots, included in `docs/previews/`.
 - Repository destinations were verified through the connected GitHub API. No fake live-demo or missing résumé links remain.
 
 ## Remaining limitations

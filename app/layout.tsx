@@ -31,15 +31,11 @@ export const metadata: Metadata = {
     images: ["/opengraph-image"],
   },
 };
-const themeScript = `(function(){try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'system'}catch(e){}})()`;
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang="en">
       <body>
         <a className="skip-link" href="#main">
           Skip to content
