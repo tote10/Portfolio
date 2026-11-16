@@ -32,14 +32,18 @@ export function Hero() {
           <Image
             src="/images/profile-picture.jpg"
             alt="Moti Alemu"
-            width={480}
-            height={600}
-            sizes="(max-width: 700px) 260px, 320px"
+            width={620}
+            height={760}
+            sizes="(max-width: 700px) 90vw, 45vw"
             priority
           />
         </div>
         <figcaption>
-          <span>Moti Alemu / Adama, Ethiopia</span>
+          <span>
+            Based in Ethiopia.
+            <br />
+            Building for the web.
+          </span>
           <a href="#contact" className="availability">
             Open to projects <span aria-hidden="true">↗</span>
           </a>

@@ -10,8 +10,8 @@ export default function Image() {
         display: "flex",
         width: "100%",
         height: "100%",
-        background: "#F0E5DB",
-        color: "#474329",
+        background: "#f1e7d8",
+        color: "#344e41",
       }}
     >
       <div
@@ -23,7 +23,7 @@ export default function Image() {
           padding: "65px",
         }}
       >
-        <span style={{ fontSize: 24, color: "#474329" }}>
+        <span style={{ fontSize: 24, color: "#49392f" }}>
           SOFTWARE ENGINEER / ETHIOPIA
         </span>
         <div
@@ -38,7 +38,7 @@ export default function Image() {
           <span>Moti</span>
           <span style={{ paddingLeft: 45 }}>Alemu.</span>
         </div>
-        <span style={{ fontSize: 23, color: "#474329" }}>
+        <span style={{ fontSize: 23, color: "#49392f" }}>
           Python · Backend APIs · Full-stack development
         </span>
       </div>
@@ -49,15 +49,15 @@ export default function Image() {
           justifyContent: "space-between",
           width: "30%",
           padding: "65px 35px",
-          background: "#F0E5DB",
-          color: "#474329",
+          background: "#344e41",
+          color: "#f1e7d8",
         }}
       >
         <span style={{ fontSize: 45 }}>↗</span>
         <div style={{ display: "flex", fontSize: 20, lineHeight: 1.6 }}>
           Practical software. Thoughtfully built.
         </div>
-        <span style={{ fontSize: 18, color: "#474329" }}>
+        <span style={{ fontSize: 18, color: "#edbdd0" }}>
           github.com/tote10
         </span>
       </div>
