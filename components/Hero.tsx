@@ -1,37 +1,59 @@
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section id="home" className="hero wrap" aria-labelledby="intro-title">
-      <div className="hero-top">
-        <p className="eyebrow">Moti Alemu / Software Engineer</p>
-        <p className="availability">
-          <span aria-hidden="true" />
-          Available for meaningful projects
+      <div className="hero-copy">
+        <p className="eyebrow">Software Engineer · Adama, Ethiopia</p>
+        <h1 id="intro-title">
+          Moti
+          <br />
+          <span>Alemu.</span>
+        </h1>
+        <p className="hero-intro">
+          I build the APIs, tools, and applications
+          <br className="desktop-break" /> that make the work easier.
         </p>
-      </div>
-      <h1 id="intro-title">
-        Behind every interface,
-        <br />
-        there’s a system.
-        <br />
-        <em>I like building that.</em>
-      </h1>
-      <div className="hero-bottom">
-        <p>
-          I’m Moti, a software engineer focused on Python, backend engineering,
-          and the details that make software work.
+        <p className="hero-description">
+          Python and backend engineering are my home ground. I also work across
+          the stack, from relational data to the interface people use.
         </p>
         <div className="hero-links">
           <a className="button" href="#projects">
-            Explore my work <span aria-hidden="true">↓</span>
+            Selected work <span aria-hidden="true">↘</span>
           </a>
           <a className="text-link" href="https://github.com/tote10">
-            GitHub <span aria-hidden="true">↗</span>
+            Browse GitHub <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
-      <div className="hero-footnote">
-        <span>Based in Adama, Ethiopia</span>
-        <span>Python · APIs · Database-driven applications</span>
+      <figure className="hero-portrait">
+        <div className="portrait-frame">
+          <Image
+            src="/images/profile-picture.jpg"
+            alt="Moti Alemu"
+            width={620}
+            height={760}
+            sizes="(max-width: 700px) 90vw, 45vw"
+            priority
+          />
+        </div>
+        <figcaption>
+          <span>
+            Based in Ethiopia.
+            <br />
+            Building for the web.
+          </span>
+          <a href="#contact" className="availability">
+            Open to projects <span aria-hidden="true">↗</span>
+          </a>
+        </figcaption>
+      </figure>
+      <div className="hero-bottomline">
+        <span>Independent thinking. Practical software.</span>
+        <a href="#projects">
+          Take a look around <span aria-hidden="true">↓</span>
+        </a>
       </div>
     </section>
   );

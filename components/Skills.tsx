@@ -1,41 +1,54 @@
 const groups = [
-  [
-    "Languages & foundations",
-    "Python, PHP, JavaScript, SQL",
-    "Application logic, scripting, and relational data.",
-  ],
-  [
-    "Backend & data",
-    "FastAPI, Laravel, REST APIs",
-    "Database-driven applications with PostgreSQL, MySQL, and SQLite.",
-  ],
-  [
-    "Interfaces & workflow",
-    "React, HTML, CSS, Git",
-    "Connecting interfaces to APIs; version control and Docker-based development.",
-  ],
+  {
+    name: "Backend engineering",
+    tools: "Python · FastAPI · PHP · Laravel",
+    note: "Application logic, REST APIs, and automation.",
+  },
+  {
+    name: "Data & persistence",
+    tools: "PostgreSQL · MySQL · SQLite · SQL",
+    note: "Relational data and database-driven applications.",
+  },
+  {
+    name: "Across the stack",
+    tools: "JavaScript · React · HTML · CSS",
+    note: "Interfaces that connect to the systems behind them.",
+  },
+  {
+    name: "Development workflow",
+    tools: "Git · GitHub · Docker",
+    note: "Version control and reproducible development environments.",
+  },
 ];
 export function Skills() {
   return (
     <section
       id="skills"
-      className="section wrap"
+      className="skills-section section"
       aria-labelledby="skills-title"
     >
-      <div className="section-heading">
+      <div className="wrap skills-layout">
         <div>
-          <p className="eyebrow">03 / Technical focus</p>
-          <h2 id="skills-title">The tools follow the problem.</h2>
+          <p className="eyebrow">Technical toolkit</p>
+          <h2 id="skills-title">
+            What I<br />
+            <em>work with.</em>
+          </h2>
         </div>
-      </div>
-      <div className="skill-grid">
-        {groups.map(([title, tools, text]) => (
-          <div key={title}>
-            <h3>{title}</h3>
-            <p className="skill-tools">{tools}</p>
-            <p>{text}</p>
-          </div>
-        ))}
+        <dl className="skill-index">
+          {groups.map((group, i) => (
+            <div key={group.name}>
+              <dt>
+                <span className="index-number">0{i + 1}</span>
+                {group.name}
+              </dt>
+              <dd>
+                <strong>{group.tools}</strong>
+                <p>{group.note}</p>
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

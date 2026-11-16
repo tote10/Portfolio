@@ -1,55 +1,61 @@
 const services = [
   [
     "Python automation",
-    "Scripts that take care of repetitive tasks, file handling, and everyday workflows.",
+    "Replace repetitive work with focused scripts for files, workflows, and everyday tasks.",
   ],
   [
-    "Backend APIs",
-    "REST endpoints, database integration, and application logic with FastAPI or PHP/Laravel.",
+    "Backend & APIs",
+    "Build application logic, REST endpoints, and database integrations with FastAPI or PHP/Laravel.",
   ],
   [
-    "Web development",
-    "Practical web applications and internal tools, from the interface to the database.",
+    "Web applications",
+    "Connect the interface, API, and database in practical websites and internal tools.",
   ],
   [
     "Debugging & data tools",
-    "Investigating application bugs, processing data, and building focused utilities.",
+    "Trace application bugs, process data, and build utilities around a specific problem.",
   ],
 ];
 export function Services() {
   return (
     <section
       id="services"
-      className="section wrap"
+      className="services-section section"
       aria-labelledby="services-title"
     >
-      <div className="services-grid">
-        <div>
-          <p className="eyebrow">04 / Working together</p>
-          <h2 id="services-title">
-            A useful extra pair
+      <div className="wrap">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">For teams & independent projects</p>
+            <h2 id="services-title">
+              Let’s make
+              <br />
+              <em>something work.</em>
+            </h2>
+          </div>
+          <p>
+            Have a clear problem to solve?
             <br />
-            of hands.
-          </h2>
-          <p className="services-intro">
-            Have a well-defined problem or a project that needs steady progress?
-            Here’s where I can help.
+            Here’s where I can contribute.
           </p>
-          <a className="text-link" href="#contact">
-            Tell me what you’re working on <span aria-hidden="true">↘</span>
-          </a>
         </div>
         <div className="service-list">
           {services.map(([title, text], i) => (
             <article key={title}>
-              <span className="eyebrow">0{i + 1}</span>
+              <span className="index-number">0{i + 1}</span>
               <div>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </div>
+              <span aria-hidden="true" className="service-arrow">
+                ↗
+              </span>
             </article>
           ))}
         </div>
+        <a className="text-link" href="#contact">
+          Start a conversation <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
   );

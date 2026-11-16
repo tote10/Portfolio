@@ -1,47 +1,41 @@
-import Image from "next/image";
 export function About() {
   return (
     <section
       id="about"
-      className="section about-section"
+      className="section wrap about-section"
       aria-labelledby="about-title"
     >
-      <div className="wrap about-grid">
-        <div>
-          <p className="eyebrow">02 / A little context</p>
-          <figure className="portrait">
-            <Image
-              src="/images/profile-picture.jpg"
-              alt="Moti Alemu"
-              width={420}
-              height={480}
-              sizes="(max-width: 700px) 80vw, 300px"
-            />
-            <figcaption>Moti Alemu · Adama, Ethiopia</figcaption>
-          </figure>
-        </div>
-        <div className="about-copy">
-          <h2 id="about-title">
-            Curious about the logic.
-            <br />
-            <em>Careful with the details.</em>
-          </h2>
-          <p>
-            I’m a software engineer drawn to the work behind an application: how
-            data is organized, how an API behaves, and how the pieces fit
-            together.
-          </p>
-          <p>
-            My main focus is Python and backend development, alongside
-            PHP/Laravel and full-stack web applications. I also explore
-            automation, data-processing tools, and AI/ML-related software.
-          </p>
-          <p>
-            I learn by building practical projects, reading the code, and
-            working through the parts I don’t yet understand. I aim for clear
-            structure and software that is straightforward to use and maintain.
-          </p>
-        </div>
+      <div className="about-label">
+        <p className="eyebrow">The person behind the code</p>
+        <h2 id="about-title">
+          A little
+          <br />
+          <em>about me.</em>
+        </h2>
+        <span className="about-signature">Moti Alemu</span>
+      </div>
+      <div className="about-copy">
+        <p className="about-lead">
+          I like understanding
+          <br />
+          how the pieces <em>fit.</em>
+        </p>
+        <p>
+          I’m a software engineer interested in the work that makes an
+          application reliable: organizing data, designing clear APIs, and
+          connecting the system from end to end.
+        </p>
+        <p>
+          My focus is Python and backend development, alongside PHP/Laravel and
+          full-stack web applications. Automation, data processing, and
+          AI/ML-related tools are other areas I explore through practical
+          projects.
+        </p>
+        <p>
+          My approach is straightforward: understand the problem, build a clear
+          solution, and keep improving the details. I care about code that
+          another person can pick up and work with.
+        </p>
       </div>
     </section>
   );
