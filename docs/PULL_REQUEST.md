@@ -2,7 +2,9 @@
 
 Replace the placeholder construction project and animation-heavy presentation with an editorial portfolio centered on real software: API Health Monitor, Stock & Property Management, Driving School Management, and an explicitly ongoing Repo-Sage entry.
 
-The design uses soft sand, mocha, muted green, and a small pink accent, system typography, clear project workflows, and responsive layouts. It presents Moti as a Software Engineer and adds categorized technical focus, practical services, and an accessible contact form while preserving the existing Formspree integration. System/light/dark themes persist, and metadata includes a generated sharing image, sitemap, robots route, and custom icon. Six unused UI/animation dependencies and their components are removed.
+The site has an entirely new visual structure: a large serif name beside an arched portrait, a forest-green lead project, a two-column supporting project layout, a skills index, a full-width mocha services section, and a redesigned contact form. Soft sand, mocha, and green carry the page, with one pink availability tag. Navigation, wordmark, typography, spacing, favicon, and sharing image are rebuilt.
+
+Moti is presented as a Software Engineer. Verified project descriptions, the existing Formspree integration, persistent system/light/dark themes, keyboard navigation, and reduced-motion behavior are preserved. Six unused UI/animation dependencies and their components are removed. The replacement portrait remains pending an image from the owner.
 
 ## Review
 
@@ -18,7 +20,7 @@ The design uses soft sand, mocha, muted green, and a small pink accent, system t
 - Theme persistence, OS preference changes, reduced motion, keyboard skip link, internal anchors, image loading, and metadata routes pass.
 - Form success and error behavior tested with intercepted Formspree responses; no messages were sent.
 - Axe WCAG 2 A/AA and 2.1 AA: zero violations at mobile and desktop widths in both themes.
-- Home page prerendered; Next.js reports 98.2 KB first-load JavaScript.
+- Home page prerendered; Next.js reports 98.3 KB first-load JavaScript.
 
 ## Before deployment
 

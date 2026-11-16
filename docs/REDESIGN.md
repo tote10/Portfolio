@@ -4,13 +4,18 @@
 
 The original site used Next.js 14 App Router, React 18, TypeScript, Tailwind, Framer Motion, and Formspree. It had one placeholder project, missing résumé and project links, a custom cursor, animation-heavy client components, a forced dark theme, and placeholder-only contact fields. No tests were configured. The existing ESLint configuration used APIs incompatible with the installed ESLint/Next versions.
 
-The implementation keeps Next.js, TypeScript, Tailwind, and the existing Formspree integration. It replaces decorative effects with an editorial layout: soft sand, mocha text, muted green, and a restrained pink accent, system sans-serif and serif typography, fine rules, and generous spacing. Projects precede biography and skills. Workflow illustrations explain actual functionality and are explicitly labeled; they are not product screenshots or live monitoring data.
+The implementation keeps Next.js, TypeScript, Tailwind, and the existing Formspree integration. The visual design is rebuilt around a personal, portrait-led composition rather than the previous typographic slogan and repeated project rows.
 
-1. Verify public repositories and personal information.
-2. Rebuild navigation, hero, selected work, biography, categorized skills, services, and contact.
-3. Add system/light/dark preference, early theme initialization, keyboard focus, a skip link, visible form labels, reduced-motion support, and responsive layouts.
-4. Add metadata, a generated sharing image, sitemap, and robots route.
-5. Remove unused effects and dependencies, validate, and prepare a review branch and pull request.
+## Design system and layout
+
+- Soft sand (`#f1e7d8`) sets the page background; forest green (`#344e41`) carries the name, primary actions, and lead project. Mocha (`#49392f`) grounds the text, portrait frame, and full-width services section.
+- One pink treatment (`#edbdd0`) marks the availability link beneath the portrait. It replaces the previous tiny wordmark accent.
+- Large Georgia serif name and headings pair with a restrained system sans-serif body. The new wordmark uses the full name.
+- The hero pairs a two-line name with an arched portrait and practical introduction. The previous hero slogan is removed.
+- API Health Monitor receives a green feature with a labeled architecture overview. The other selected projects appear side by side without repeated workflow panels. Repo-Sage remains explicitly in progress.
+- Biography, a definition-list skills index, a mocha services grid, and a contact layout with underlined fields provide distinct section structures.
+- System/light/dark preferences, visible focus, semantic HTML, reduced-motion support, optimized imagery, and the existing contact functionality remain available.
+- The sharing image and favicon follow the new design.
 
 ## Content evidence
 
@@ -45,7 +50,7 @@ No gradients, neon, glass panels, custom cursor, decorative counters, skills bad
 
 - `npm run lint`: passed.
 - `npm run typecheck`: passed.
-- `npm run build`: passed; home page prerendered, 98.2 KB first-load JavaScript as reported by Next.js.
+- `npm run build`: passed; home page prerendered, 98.3 KB first-load JavaScript as reported by Next.js.
 - `git diff --check`: passed.
 - Production-preview browser checks with temporary Playwright tooling: no horizontal overflow at 320, 375, 768, 1024, or 1440 px; portrait loads; internal anchors resolve; keyboard skip link works; stored theme survives reload; system theme follows OS changes; reduced-motion disables smooth scrolling; required-field validation works; intercepted Formspree error and success responses render correctly; no browser exceptions.
 - `/robots.txt`, `/sitemap.xml`, `/opengraph-image`, and `/icon.svg`: HTTP 200 in the production preview.
@@ -59,6 +64,6 @@ The existing Next.js 14.1.0 version is retained to keep this redesign on the exi
 
 The existing Formspree endpoint is retained, but its account configuration and end-to-end email delivery have not been verified. Browser tests intercept requests and send no real messages. The verified email link provides a direct alternative.
 
-## Latest owner revision
+## Portrait and professional identity
 
-Present Moti as a Software Engineer across the hero, biography, SEO metadata, and sharing image. Remove student and education positioning. Use soft sand (`#f2e9dc`), mocha (`#493a31`), and muted green (`#435a45`), with pink (`#ab4f70`) limited to the wordmark dot. Retain corresponding dark theme colors. Remove the grayscale portrait filter so a replacement photo can retain its natural colors. The new portrait is pending an image from the owner; the existing photo remains in place.
+Moti is presented as a Software Engineer across the hero, biography, metadata, and sharing image. Student and education positioning is removed. The original portrait is displayed in the hero with its natural image colors; a replacement photo is still pending an image from the owner.
